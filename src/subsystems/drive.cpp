@@ -1,6 +1,7 @@
 #include "lemlib/chassis/chassis.hpp"
 #include "main.h"
 static float TO_RADIANS = 0.0174533;
+static float TO_DEGREES = 57.2958;
 
 void tankDrive()
 {
@@ -25,7 +26,7 @@ void moveIn(double inches, int tout, bool ays = false, bool f = true)
     {
         int newX = oldX*cos(theta) + oldX;
         int newY = oldY*sin(theta) + oldY;
-        chassis.moveTo(newX,newY,theta,tout,ays,true);
+        chassis.moveTo(newX,newY,(theta * TO_DEGREES),tout,ays,true);
     }
     if(!f)
     {
