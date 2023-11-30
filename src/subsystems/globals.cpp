@@ -44,13 +44,13 @@ lemlib::OdomSensors_t sensors = {
     nullptr,
     &inertial};
 lemlib::ChassisController_t lateralController = {
-    15, // kP
-    30, // kD
+    20, // kP
+    47, // kD
     1, // smallErrorRange
     100, // smallErrorTimeout
     3, // largeErrorRange
     500, // largeErßrorTimeout
-    16};// slew rate
+    0};// slew rate
 lemlib::ChassisController_t angularController = {
     3.6,
     28,

@@ -104,7 +104,7 @@ void tester()
 {
   setDriveBrake(pros::E_MOTOR_BRAKE_HOLD);
   chassis.setPose(0,0,0);
-  chassis.turnTo(5, 0, 5000);
+  moveIn(30,5000,false,true);
 }
 
 

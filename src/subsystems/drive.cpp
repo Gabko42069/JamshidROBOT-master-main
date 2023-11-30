@@ -24,15 +24,15 @@ void moveIn(double inches, int tout, bool ays = false, bool f = true)
    float theta = current.theta;
     if(f)
     {
-        int newX = oldX*cos(theta) + oldX;
-        int newY = oldY*sin(theta) + oldY;
+        int newX = inches*sin(theta) + oldX;
+        int newY = inches*cos(theta) + oldY;
         chassis.moveTo(newX,newY,(theta * TO_DEGREES),tout,ays,true);
     }
     if(!f)
     {
-        int newX = oldX*cos(theta) - oldX;
-        int newY = oldY*sin(theta) - oldY;
-        chassis.moveTo(newX,newY,theta,tout,ays,false);
+        int newX = inches*sin(theta) - oldX;
+        int newY = inches*cos(theta) - oldY;
+        chassis.moveTo(newX,newY,(TO_DEGREES*theta) ,tout,ays,false);
     }
 }
 void turnDegrees(double changeTheta, int tout, bool right=true)
