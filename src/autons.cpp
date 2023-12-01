@@ -39,11 +39,11 @@ void sixBAll()
     changeMode(leftWing);
     pros::delay(400);
     changeMode(leftWing);
-    pros::delay(5000);
+    pros::delay(1000);
     chassis.turnTo(66, -26, 1000, false, true);
     chassis.moveTo(69,-26,180,1800,false,false);
     chassis.follow(swingy10_txt, 5000,12);
-    chassis.turnTo(50,-5,1000);//make aysnc for time cut
+    chassis.turnTo(50,-7,1000);//make aysnc for time cut
     setIntake(127);
     pros::delay(300);
     setIntake(-127);
@@ -57,7 +57,8 @@ void sixBAll()
     changeMode(rightWing);
     pros::delay(400);
     chassis.turnTo(45,-10,1500);
-    chassis.moveTo(45,-10,90,1500,true);
+   // chassis.moveTo(45,-10,90,1500,true);
+    moveIn(35,3000,true,true);
     pros::delay(100);
     setIntake(127);
     pros::delay(800);
@@ -104,7 +105,8 @@ void tester()
 {
   setDriveBrake(pros::E_MOTOR_BRAKE_HOLD);
   chassis.setPose(0,0,0);
-  moveIn(30,5000,false,true);
+  turnDegrees(15,5000,true);
+  
 }
 
 

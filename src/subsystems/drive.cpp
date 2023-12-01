@@ -46,9 +46,9 @@ void turnDegrees(double changeTheta, int tout, bool right=true)
    if(right)
    {
     lemlib::Pose newDeg = current.rotate(changeTheta * TO_RADIANS );
-    float faceX = X + cos(newDeg.theta);
-    float faceY = Y + sin(newDeg.theta);
-    chassis.turnTo(faceX,faceY,tout);
+    float faceX = X + 10*cos(newDeg.theta);
+    float faceY = Y + 10*sin(newDeg.theta);
+    chassis.turnTo(faceY,faceX,tout);
    } else
    {
     lemlib::Pose newDeg = current.rotate(changeTheta * TO_RADIANS );

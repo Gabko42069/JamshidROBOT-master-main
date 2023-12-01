@@ -29,9 +29,9 @@ def turnDegrees(changeTheta,right,pos):
     newDeg = changeTheta * TO_RADIANS
     print(newDeg)
     if right:
-        faceX = X + math.cos(15 * TO_RADIANS)
-        faceY = Y + math.sin(15 * TO_RADIANS)
+        faceX = X + math.cos(newDeg)
+        faceY = Y + math.sin(newDeg)
         return faceX,faceY
 
-print(turnDegrees(90,True,[0,0]))
+print(turnDegrees(15,True,[0,0]))
 
