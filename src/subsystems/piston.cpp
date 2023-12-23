@@ -1,42 +1,36 @@
 #include "main.h"
 #include "pros/misc.h"
 
-void controlPistons()
-{
-    if(controller.get_digital_new_press(DIGITAL_Y))
-    {
-        arm.set_value(!arm.get_value());
+void controlPistons() {
+  if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+      dblactingL.set_value(1);
+      dblactingR.set_value(1);
     }
-    else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B))
-    {
-        elevation.set_value(!elevation.get_value());
+  if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+      dblactingL.set_value(0);
+      dblactingR.set_value(0);
+      snglactingL.set_value(1);
+      snglactingR.set_value(1);
     }
-    else if (controller.get_digital_new_press(DIGITAL_A)) 
-    {
-        rightWing.set_value(!rightWing.get_value());
-        leftWing.set_value(!leftWing.get_value());
-    }
-    else if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X))
-    {
-        backWing.set_value(!backWing.get_value());
-    }
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT))
-    {
-        rightWing.set_value(!rightWing.get_value());
-    }
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT))
-    {
-        leftWing.set_value(!leftWing.get_value());
-    }
-}
 
-void ledouble()
-{
+  if (controller.get_digital_new_press(DIGITAL_A)) {
     rightWing.set_value(!rightWing.get_value());
     leftWing.set_value(!leftWing.get_value());
+  }
+  if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
+    blocker.set_value(!blocker.get_value());
+  }
+  if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_B)) {
+    rightWing.set_value(!rightWing.get_value());
+  }
+  if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_DOWN)) {
+    leftWing.set_value(!leftWing.get_value());
+  }
 }
 
-void changeMode(pros::ADIPort wing)
-{
-    wing.set_value(!wing.get_value());
+void ledouble() {
+  rightWing.set_value(!rightWing.get_value());
+  leftWing.set_value(!leftWing.get_value());
 }
+
+void changeMode(pros::ADIPort wing) { wing.set_value(!wing.get_value()); }

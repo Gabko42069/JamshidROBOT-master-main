@@ -1,6 +1,8 @@
 
 void sixBAll();
 
+void leftSide();
+
 void autonskills();
 
 void tester();

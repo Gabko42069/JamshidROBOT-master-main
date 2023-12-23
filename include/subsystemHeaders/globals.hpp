@@ -1,30 +1,34 @@
+#include "lemlib/api.hpp"
 #include "main.h"
 #include "pros/adi.hpp"
-#include "lemlib/api.hpp"
 
-//Motors
+// Motors
 
-extern pros :: Motor leftFront; 
-extern pros :: Motor leftMiddle; 
-extern pros :: Motor leftBack;
-extern pros :: Motor rightFront;
-extern pros :: Motor rightMiddle;
-extern pros :: Motor rightBack;
+extern pros ::Motor leftFront;
+extern pros ::Motor leftMiddle;
+extern pros ::Motor leftBack;
+extern pros ::Motor rightFront;
+extern pros ::Motor rightMiddle;
+extern pros ::Motor rightBack;
 
-extern pros :: Motor intake;
-extern pros :: Motor cata;
-extern pros :: Imu inertial;
-extern pros :: Controller controller;
+extern pros ::Motor intake;
+extern pros ::Motor cata;
+extern pros ::Motor cata2;
+extern pros ::Imu inertial;
+extern pros ::Controller controller;
 
-extern pros :: ADIPort leftWing;
-extern pros :: ADIPort rightWing;
-extern pros :: ADIPort backWing;
-extern pros :: ADIPort arm;
-extern pros :: ADIPort elevation; // piston 
-extern pros :: ADIPort limitswitch; // limit switch
-extern pros :: Optical colorSensor;
-extern pros :: Optical colorSensor2;
-extern pros :: Imu inertial;
+extern pros ::ADIPort leftWing;
+extern pros ::ADIPort rightWing;
+extern pros ::ADIPort blocker;    // piston
+extern pros ::ADIPort limitswitch; // limit switch
+extern pros ::ADIPort dblactingR;  // double acting solanoid on the right
+extern pros ::ADIPort snglactingR; // single acting solanoid on the right
+extern pros ::ADIPort dblactingL;  // double acting solanoid on the left
+extern pros ::ADIPort snglactingL; // single acting solanoid on the left
+
+extern pros ::Optical colorSensor;
+extern pros ::Optical colorSensor2;
+extern pros ::Imu inertial;
 
 extern pros::MotorGroup left_side_motors;
 extern pros::MotorGroup right_side_motors;
@@ -40,19 +44,23 @@ extern lemlib::Chassis chassis;
 #define leftFrontPort 13
 #define leftMiddlePort 12
 #define leftBackPort 11
-#define rightFrontPort 15
-#define rightMiddlePort 16
-#define rightBackPort 17 
+#define rightFrontPort 18
+#define rightMiddlePort 17
+#define rightBackPort 16
 
-#define intakePort 18 
-#define cataPort 21 
-#define inertialPort 14
-#define opticPort 20
-#define opticPort2 7
+#define intakePort 20
+#define cataPort 3
+#define cata2Port 4
+#define inertialPort 21
+#define opticPort 0
+#define opticPort2 14
 
 #define limitswitchPort 'D'
-#define leftWingPort 'G'
-#define rightWingPort 'B'
-#define backWingPort 'H'
-#define armPort 'A'
-#define elevationPort 'E'
+#define leftWingPort 'A'
+#define rightWingPort 'H'
+#define blockerPort 'E'
+#define dblactingRPort 'F'
+#define snglactingRPort 'G'
+
+#define dblactingLPort 'C'
+#define snglactingLPort 'B'

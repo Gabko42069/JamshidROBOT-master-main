@@ -7,15 +7,14 @@
  * "I was pressed!" and nothing.
  */
 
-
 void on_center_button() {
-	static bool pressed = false;
-	pressed = !pressed;
-	if (pressed) {
-		pros::lcd::set_text(2, "I was pressed!");
-	} else {
-		pros::lcd::clear_line(2);
-	}
+  static bool pressed = false;
+  pressed = !pressed;
+  if (pressed) {
+    pros::lcd::set_text(2, "I was pressed!");
+  } else {
+    pros::lcd::clear_line(2);
+  }
 }
 
 /**
@@ -25,13 +24,13 @@ void on_center_button() {
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	pros::lcd::initialize();
-	chassis.calibrate();
-	selector:: init();
-	chassis.setPose(0,0,0);
-	//pros::lcd::set_text(1, "Hello PROS User!");
+  pros::lcd::initialize();
+  chassis.calibrate();
+  selector::init();
+  chassis.setPose(0, 0, 0);
+  // pros::lcd::set_text(1, "Hello PROS User!");
 
-	//pros::lcd::register_btn1_cb(on_center_button)
+  // pros::lcd::register_btn1_cb(on_center_button)
 }
 
 /**
@@ -64,10 +63,18 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	//setDriveBrake(pros::E_MOTOR_BRAKE_HOLD);
-	if(selector::auton == 3){ autonskills();}
-	if(selector::auton== 1){ sixBAll();}
-	if(selector::auton == 2){ fiveBall();}
+  // setDriveBrake(pros::E_MOTOR_BRAKE_HOLD);
+  
+  if (selector::auton == 3) {
+    autonskills();
+  }
+  if (selector::auton == 2) {
+    sixBAll();
+  }
+  if (selector::auton == 1) {
+    leftSide();
+  }
+  
 }
 
 /**
@@ -84,13 +91,14 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-	colorSensor.set_led_pwm(0);
-	setDriveBrake(pros::E_MOTOR_BRAKE_COAST);
-	while (true) {
-		tankDrive();
-		controlIntake();
-    	controlPistons();
-    	controlCata();
-		pros::delay(20);
-	}
+  colorSensor.set_led_pwm(0);
+  setDriveBrake(pros::E_MOTOR_BRAKE_COAST);
+  //pros::lcd::set_text(4, std::to_string(dblactingR.get_value()));
+  while (true) {
+    tankDrive();
+    controlIntake();
+    controlPistons();
+    controlCata();
+    pros::delay(20);
+  }
 }
