@@ -53,7 +53,7 @@ extern lemlib::Chassis chassis;
 #define cataPort 3
 #define cata2Port 4
 #define inertialPort 21
-#define opticPort 0
+#define opticPort 10
 #define opticPort2 14
 
 #define limitswitchPort 'D'
