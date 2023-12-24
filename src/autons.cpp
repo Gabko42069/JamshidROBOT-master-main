@@ -9,7 +9,7 @@ ASSET(swingy10_txt);
 ASSET(skills0_txt);
 ASSET(clone3_txt);
 ASSET(swing1_txt); //abllz
-ASSET(clone5_txt);
+ASSET(clone5_txt); //bals
 ASSET(final_txt);
 ASSET(final5ball_txt);
 ASSET(swingy12_txt);
