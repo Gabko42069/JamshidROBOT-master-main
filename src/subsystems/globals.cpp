@@ -5,6 +5,7 @@
 #include "pros/motors.h"
 
 bool lazyMode = false;
+int elevationCount = 0;
 
 pros ::Motor leftFront(leftFrontPort, pros ::E_MOTOR_GEARSET_06, true);
 pros ::Motor leftMiddle(leftMiddlePort, pros ::E_MOTOR_GEARSET_06, true);
