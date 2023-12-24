@@ -11,7 +11,7 @@ ASSET(clone3_txt);
 ASSET(swing1_txt); //abllz
 ASSET(clone5_txt); //bals
 ASSET(final_txt);
-ASSET(final5ball_txt);
+ASSET(final5ball_txt); //baklilukj
 ASSET(swingy12_txt);
 ASSET(unretard_txt);
 ASSET(skills99_txt);
