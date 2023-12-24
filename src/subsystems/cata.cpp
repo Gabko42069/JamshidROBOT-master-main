@@ -4,7 +4,6 @@
 #include "pros/rtos.h"
 #include "pros/rtos.hpp"
 
-bool lazyMode = false;
 
 void setCata(double power) {
   cata = power;

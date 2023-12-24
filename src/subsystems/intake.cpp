@@ -15,6 +15,7 @@ void controlIntake() // goes in main.h
     else if(controller.get_digital(DIGITAL_R2))
     {
         setIntake(127);
+        lazyMode=false;
     }
     else 
     {

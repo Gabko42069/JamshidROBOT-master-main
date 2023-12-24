@@ -3,6 +3,7 @@
 #include "pros/adi.hpp"
 
 // Motors
+extern bool lazyMode;
 
 extern pros ::Motor leftFront;
 extern pros ::Motor leftMiddle;

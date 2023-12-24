@@ -4,6 +4,8 @@
 #include "pros/adi.hpp"
 #include "pros/motors.h"
 
+bool lazyMode = false;
+
 pros ::Motor leftFront(leftFrontPort, pros ::E_MOTOR_GEARSET_06, true);
 pros ::Motor leftMiddle(leftMiddlePort, pros ::E_MOTOR_GEARSET_06, true);
 pros ::Motor leftBack(leftBackPort, pros ::E_MOTOR_GEARSET_06, true);
