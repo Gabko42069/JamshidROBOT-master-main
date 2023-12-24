@@ -8,7 +8,7 @@ ASSET(right8_txt); // drives from under the bar to ram into the goal
 ASSET(swingy10_txt);
 ASSET(skills0_txt);
 ASSET(clone3_txt);
-ASSET(swing1_txt);
+ASSET(swing1_txt); //abllz
 ASSET(clone5_txt);
 ASSET(final_txt);
 ASSET(final5ball_txt);
