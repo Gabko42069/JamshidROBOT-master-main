@@ -5,6 +5,7 @@
 #include "pros/motors.h"
 
 bool lazyMode = false;
+int elevationCount = 0; 
 
 pros ::Motor leftFront(leftFrontPort, pros ::E_MOTOR_GEARSET_06, true);
 pros ::Motor leftMiddle(leftMiddlePort, pros ::E_MOTOR_GEARSET_06, true);
@@ -41,16 +42,16 @@ lemlib::Drivetrain_t drivetrain = {
 
 lemlib::OdomSensors_t sensors = {nullptr, nullptr, nullptr, nullptr, &inertial};
 lemlib::ChassisController_t lateralController = {
-    16,  // kP
-    50,  // kD
+    10,  // kP 7.85
+    30,  // kD 80
     1,   // smallErrorRange
     100, // smallErrorTimeout
     3,   // largeErrorRange
-    200  // largeErrorTimeout
+    500  // largeErrorTimeout
 };       // slew rate
 lemlib::ChassisController_t angularController = {
-    4, // kP
-    43,  // kD
+    3.56, // kP 3.78
+    32,  // kD 31
     1,   // smallErrorRange
     100, // smallErrorTimeout
     3,   // largeErrorRange

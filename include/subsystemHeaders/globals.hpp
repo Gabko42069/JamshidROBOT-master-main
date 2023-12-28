@@ -2,9 +2,11 @@
 #include "main.h"
 #include "pros/adi.hpp"
 
-// Motors
-extern bool lazyMode;
 
+extern bool lazyMode;
+extern int elevationCount;
+
+// Motors
 extern pros ::Motor leftFront;
 extern pros ::Motor leftMiddle;
 extern pros ::Motor leftBack;

@@ -16,6 +16,7 @@ ASSET(swingy12_txt);
 ASSET(unretard_txt);
 ASSET(skills99_txt);
 ASSET(sab0_txt);
+ASSET(a1_txt);
 int catashots = 0;
 
 void sixBAll() {
@@ -99,10 +100,16 @@ void autonskills() {
 }
 
 void tester() {
-  setDriveBrake(pros::E_MOTOR_BRAKE_HOLD);
-  chassis.setPose(0, 0, 0);
-  chassis.turnTo(10, 0, 2000);
+  chassis.setPose(32.335, 52.539, 0); //setpose
+  chassis.moveTo(32.335, 15, 0, 4000, false, false); //move to midcourt
+  pros::delay(300);
+  turnBy(90, 1000, true);
+  pros::delay(300);
+  //chassis.setPose(32.335, 15, 90);
+  chassis.moveTo(10, 15, 90, 1000, false, false);
+  //chassis.follow(a1_txt, 3000, 8, false, false);
 }
+
 void fiveBall() {
   chassis.setPose(30, -58, -90);
   rightWing.set_value(!rightWing.get_value());
@@ -149,6 +156,13 @@ void fiveBall() {
   pros::delay(800);
   ledouble();
   chassis.moveTo(0, -48, 225, 2000);
+}
+
+void testertwo() {
+  setDriveBrake(pros::E_MOTOR_BRAKE_BRAKE);
+  chassis.setPose(0, 0, 0);
+  //chassis.moveTo(0,24,0,3000);
+  chassis.turnTo(30, 0, 2000);
 }
 /*
 

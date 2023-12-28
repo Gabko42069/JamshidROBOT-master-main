@@ -71,10 +71,15 @@ void autonomous() {
   if (selector::auton == 2) {
     sixBAll();
   }
-  if (selector::auton == 1) {
+  if (selector::auton == 4) {
     leftSide();
   }
-  
+  if (selector::auton == 5) {
+    tester();
+  }
+  if (selector::auton == 1) {
+    testertwo();
+  }
 }
 
 /**

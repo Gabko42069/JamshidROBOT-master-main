@@ -26,9 +26,13 @@ void controlCata() {
   if (lazyMode) {
     colorSensor.set_led_pwm(100);
     colorSensor2.set_led_pwm(100);
-    if (colorSensor.get_proximity() >= 70 ||
-        colorSensor2.get_proximity() >= 70) {
-      pros ::delay(50);
+    if (colorSensor.get_proximity() >= 70) {
+      pros ::delay(1000);
+      pros ::Task(cataAysnc, TASK_PRIORITY_MIN);
+      pros ::delay(150);
+    }
+    else if (colorSensor2.get_proximity() >= 70) {
+      pros ::delay(100);
       pros ::Task(cataAysnc, TASK_PRIORITY_MIN);
       pros ::delay(150);
     }

@@ -3,15 +3,22 @@
 
 void controlPistons() {
   if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+      if(elevationCount % 2 == 0)
+      {
       dblactingL.set_value(1);
       dblactingR.set_value(1);
-    }
-  if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_LEFT)) {
+      snglactingL.set_value(0);
+      snglactingR.set_value(0);
+      }
+      else{
       dblactingL.set_value(0);
       dblactingR.set_value(0);
       snglactingL.set_value(1);
       snglactingR.set_value(1);
-    }
+      }
+      elevationCount++;
+  }
+    
 
   if (controller.get_digital_new_press(DIGITAL_A)) {
     rightWing.set_value(!rightWing.get_value());
